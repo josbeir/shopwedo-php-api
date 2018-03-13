@@ -1,0 +1,23 @@
+<phpunit
+        colors="true"
+        stderr="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        stopOnFailure="false"
+        bootstrap="vendor/autoload.php">
+    <testsuites>
+        <testsuite name="Shopwedo test suite">
+            <directory>./tests</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./src/Shopwedo</directory>
+        </whitelist>
+    </filter>
+    <php>
+        <const name="SHOPWEDO_SHOPID" value=""/>
+        <const name="SHOPWEDO_APIKEY" value=""/>
+    </php>
+</phpunit>
