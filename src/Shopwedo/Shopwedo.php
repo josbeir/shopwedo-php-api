@@ -57,8 +57,13 @@ class Shopwedo
             throw new ShopwedoSDKException(sprintf('%s is not an allowed method', $name));
         }
 
+        $data = [];
+        if (isset($arguments[0])) {
+            $data = $arguments[0];
+        }
+        
         $expectedResponseCode = $methods[$name];
-        $response = $this->client->request($name, $arguments);
+        $response = $this->client->request($name, $data);
 
         if ($response->getStatusCode() == $expectedResponseCode) {
             if ($body = json_decode($response->getBody(), true)) {
