@@ -61,16 +61,16 @@ class Shopwedo
         if (isset($arguments[0])) {
             $data = $arguments[0];
         }
-        
+
         $expectedResponseCode = $methods[$name];
         $response = $this->client->request($name, $data);
 
         if ($response->getStatusCode() == $expectedResponseCode) {
-            if ($body = json_decode($response->getBody(), true)) {
+            if ($body = json_decode((string)$response->getBody(), true)) {
                 return $body;
             }
 
-            throw new ShopwedoSDKException(sprintf('"%s" response did not return a json string (%s)'), $name, $response->getBody());
+            throw new ShopwedoSDKException(sprintf('"%s" response did not return a json string (%s)'), $name, (string)$response->getBody());
         }
 
         throw new ShopwedoResponseException(
