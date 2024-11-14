@@ -1,3 +1,8 @@
+# Depcreation warning
+There is now an official php package to access the API:
+
+https://bitbucket.org/shopwedo/shopwedo-api-php/src/master/
+
 # ShopWeDo PHP Api
 
 ShopWeDo PHP Api wrapper for use with the ShopWeDo REST api.
