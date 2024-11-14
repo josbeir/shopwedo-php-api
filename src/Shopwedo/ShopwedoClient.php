@@ -12,7 +12,7 @@ use GuzzleHttp\Psr7;
  */
 class ShopwedoClient
 {
-    const SHOPWEDO_HOST = 'https://api.shopwedo.app/';
+    const SHOPWEDO_HOST = 'https://api.shopwedo.app/api/';
 
     protected $client;
 
